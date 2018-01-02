@@ -1,0 +1,43 @@
+{
+  "name": "eslint-config-zhw2590582",
+  "version": "1.1.1",
+  "description": "zhw2590582's eslint config",
+  "main": "index.js",
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "eslint index.js && ! eslint -c index.js tests/fail.js &>/dev/null && eslint -c index.js tests/pass.js && echo 'pass'",
+    "prepare": "npm test",
+    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true
+    }
+  },
+  "author": "Harvey Zack <laozhaochaguan@hotmail.com>",
+  "contributors": [
+    "Bill Neff <bneff@synacor.com>"
+  ],
+  "license": "GPL-3.0",
+  "repository": "zhw2590582/eslint-config-zhw2590582",
+  "dependencies": {
+    "babel-eslint": "^8.0.3",
+    "eslint-plugin-compat": "^2.1.0",
+    "eslint-plugin-jest": "^21.4.2",
+    "eslint-plugin-mocha": "^4.0.0",
+    "eslint-plugin-react": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=4"
+  }
+}
